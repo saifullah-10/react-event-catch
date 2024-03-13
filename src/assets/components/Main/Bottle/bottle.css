@@ -1,0 +1,15 @@
+.bottle {
+    padding: 10px;
+    border: 3px solid blueviolet;
+    border-radius: 20px;
+}
+
+.bottle img {
+    width: 150px;
+    height: 150px;
+}
+
+.bottle button {
+    padding: 5px;
+    background-color: antiquewhite;
+}
