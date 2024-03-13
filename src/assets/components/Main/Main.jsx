@@ -15,13 +15,26 @@ const Main = () => {
   function handleCart({ bottle, e }) {
     const { name, price } = bottle;
     const data = { name: name, price: price };
-    e.target.disabled = "true";
-    console.log(e.target.parentNode);
+
+    const dataArr = [...items, data];
+    setItems(dataArr);
+    console.log(items);
+    // if (items.some((item) => item.name == data.name)) {
+    //   alert("already add");
+    // } else {
+    //   setItems(dataArr);
+    //   e.target.disabled = "true";
+    // }
   }
 
   return (
     <>
       <h2>Bottles Available: {bottles.length - items.length}</h2>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {items.map((item) => (
+          <h2>{item.name}</h2>
+        ))}
+      </div>
       <div className="bottle_layout">
         {bottles.map((bottle) => (
           <Bottle
